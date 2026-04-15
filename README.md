@@ -2,6 +2,7 @@
 
 1. [CH1-Machine Learning Types](#ch1)
 2. [CH2-Perceptron](#ch2)
+3. [CH3-SklearnClassificators](#ch3)
 
 # CH1
 Machine Learning is divided into three main types:
@@ -100,7 +101,7 @@ Given:
 
 ### 1. Forward pass
 
-z = 1 * 1 + 1 * 1 + 1 * 2 - 4 = 0
+z = 1*1 + 1*1 + 1*2 - 4 = 0
 
 Since z >= 0, then:
 
@@ -177,7 +178,7 @@ Given:
 
 ### 1. Forward pass
 
-z = 1 * 1 + 1 * 1 + 1 * 2 + 1 = 5
+z = 1*1 + 1*1 + 1*2 + 1 = 5
 
 y_pred = 5
 
@@ -220,3 +221,70 @@ After one update:
 - b = 2
 
 The model updated parameters to reduce squared error.
+
+# CH3
+
+## 1. Logistic Regression
+- Type: linear classifier (binary / multiclass)
+- Model:
+  z = w · x + b  
+  y_pred = sigmoid(z)
+
+- Output:
+  probability in [0, 1]
+
+- Key points:
+  - uses logistic (sigmoid) function
+  - optimized via gradient descent
+  - good baseline model
+  - supports regularization (L1, L2)
+
+---
+
+## 2. Support Vector Machine (SVM)
+- Type: classification
+- Goal:
+  maximize margin between classes
+
+- Key points:
+  - uses support vectors (critical points)
+  - can handle non-linear data via kernels
+  - robust to overfitting (with proper C)
+
+---
+
+## 3. Decision Tree
+- Type: classification / regression
+- Idea:
+  split data based on feature thresholds
+
+- Key points:
+  - interpretable (tree structure)
+  - no need for feature scaling
+  - prone to overfitting
+
+---
+
+## 4. Random Forest
+- Type: ensemble (many decision trees)
+
+- Idea:
+  combine multiple trees (bagging)
+
+- Key points:
+  - reduces overfitting
+  - more stable than single tree
+  - works well out-of-the-box
+
+---
+
+## 5. k-Nearest Neighbors (k-NN)
+- Type: classification / regression
+
+- Idea:
+  predict based on nearest data points
+
+- Key points:
+  - no training phase (lazy learning)
+  - sensitive to scaling
+  - slow on large datasets
